@@ -47,6 +47,7 @@ jobs:
         run: |
           echo 'owner : ' >> ${{github.repository_owner}}
           echo 'secrets token value : ' >> ${{secrets.GITHUB_TOKEN}}
+          echo ' tag value is  ' >> ${{env.IMAGE_NAME:latest}} 
           
       # Image Build and Push 
       - name: Push to GitHub Packages
