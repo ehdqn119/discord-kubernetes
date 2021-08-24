@@ -25,6 +25,9 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # image Env var
+      - name: Check out code
+        uses: actions/checkout@v2
+        
       - name: Get verion
         id: image
         run: |
