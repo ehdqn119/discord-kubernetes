@@ -45,7 +45,9 @@ jobs:
       # debug value 
       - name: Run a multi-line script
         run: |
-          ${{github.repository_owner}} ${{secrets.GITHUB_TOKEN}}
+          echo 'owner : ' >> $github.repository_owner
+          echo 'secrets token value : ' >> $secrets.GITHUB_TOKEN
+          
       # Image Build and Push 
       - name: Push to GitHub Packages
         uses: docker/build-push-action@v1
