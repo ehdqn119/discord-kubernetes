@@ -41,12 +41,12 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.REGISTRY_TOKEN }}
       # debug value 
       - name: Run a multi-line script
         run: |
           echo 'owner : ' >> ${{github.repository_owner}}
-          echo 'secrets token value : ' >> ${{secrets.GITHUB_TOKEN}}
+          echo 'secrets token value : ' >> ${{secrets.REGISTRY_TOKEN}}
           
       # Image Build and Push 
       - name: Push to GitHub Packages
