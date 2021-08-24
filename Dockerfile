@@ -1,6 +1,10 @@
 # Pull base image.
 FROM dockerfile/ubuntu
 
+WORKDIR ${APP_HOME}
+
+COPY . ${APP_HOME}
+
 # Install Nginx.
 RUN \
   add-apt-repository -y ppa:nginx/stable && \
