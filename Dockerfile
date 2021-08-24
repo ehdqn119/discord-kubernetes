@@ -1,7 +1,5 @@
 # Pull base image.
-FROM dockerfile/ubuntu
-
-WORKDIR ${APP_HOME}
+FROM dockerfile/ubuntu:latest
 
 COPY . ${APP_HOME}
 
@@ -14,11 +12,14 @@ RUN \
   echo "\ndaemon off;" >> /etc/nginx/nginx.conf && \
   chown -R www-data:www-data /var/lib/nginx
 
+# test
+
+
 # Define mountable directories.
 VOLUME ["/etc/nginx/sites-enabled", "/etc/nginx/certs", "/etc/nginx/conf.d", "/var/log/nginx", "/var/www/html"]
 
 # Define working directory.
-WORKDIR /etc/nginx
+WORKDIR ${APP_HOME}
 
 # Define default command.
 CMD ["nginx"]
